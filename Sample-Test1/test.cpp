@@ -8,10 +8,20 @@ TEST(TestCaseName, SameString) {
 
 TEST(TestCaseName, MultipleString) {
 	Checker ckr;
-	EXPECT_EQ(ckr.check("te", "s"), 0);
+	EXPECT_EQ(ckr.check("bb", "a"), 0);
 }
 
-TEST(TestCaseName, DiffString) {
+TEST(TestCaseName, DiffString1) {
 	Checker ckr;
-	EXPECT_EQ(ckr.check("teaa", "aas"), 40);
+	EXPECT_EQ(ckr.check("aaabb", "baa"), 20);
+}
+
+TEST(TestCaseName, DiffString2) {
+	Checker ckr;
+	EXPECT_EQ(ckr.check("aaabb", "baaaaa"), 48);
+}
+
+TEST(TestCaseName, ExceptionString) {
+	Checker ckr;
+	EXPECT_THROW(ckr.check("", ""), invalid_argument);
 }
