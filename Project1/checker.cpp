@@ -5,7 +5,7 @@ using namespace std;
 
 class Checker {
 public:
-	int check(string str1, string str2) {
+	int checkLength(string str1, string str2) {
 		validCheck(str1, str2);
 
 		int longStr = str1.size() >= str2.size() ? str1.size() : str2.size();
